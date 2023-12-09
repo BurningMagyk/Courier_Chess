@@ -1,9 +1,23 @@
-[gd_scene format=3 uid="uid://breqdmispqxav"]
+[gd_scene load_steps=3 format=3 uid="uid://breqdmispqxav"]
+
+[ext_resource type="Script" path="res://scripts/SplashText.cs" id="1_kghlt"]
+[ext_resource type="Script" path="res://scripts/Gui.cs" id="1_yvc5h"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yvc5h")
+
+[node name="Splash Text" type="Label" parent="."]
+layout_mode = 0
+offset_right = 346.0
+offset_bottom = 107.0
+script = ExtResource("1_kghlt")
+
+[connection signal="resized" from="." to="Splash Text" method="OnResize"]
